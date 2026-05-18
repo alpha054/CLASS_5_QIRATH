@@ -1,272 +1,533 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - PSC POINT</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --primary: #2c3e50;
-      --secondary: #3498db;
-      --accent: #2980b9;
-      --light: #ecf0f1;
-      --dark: #2c3e50;
-      --text: #333;
-      --text-light: #777;
-      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>سورة يس | كاملة (1-83) - للأطفال</title>
+<link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: linear-gradient(145deg, #f0f4f0 0%, #e2e8da 100%);
+    font-family: 'Scheherazade New', 'Cairo', serif;
+    min-height: 100vh;
+    direction: rtl;
+    padding-bottom: 50px;
+  }
+
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 20px 16px 40px;
+  }
+
+  /* header section */
+  .surah-header {
+    background: #ffffffcc;
+    backdrop-filter: blur(4px);
+    border-radius: 50px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #c8dbc0;
+  }
+
+  .surah-title {
+    font-size: clamp(1.8rem, 6vw, 2.6rem);
+    font-weight: 800;
+    color: #2c6e2c;
+    letter-spacing: -0.3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .title-arabic {
+    font-family: 'Scheherazade New', serif;
+  }
+  .title-secondary {
+    font-size: 0.85rem;
+    background: #e2ecd9;
+    padding: 3px 14px;
+    border-radius: 100px;
+    font-family: 'Cairo', sans-serif;
+    color: #2c6e2c;
+  }
+
+  .verse-range {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.9rem;
+    background: #d9e8d0;
+    display: inline-block;
+    padding: 4px 22px;
+    border-radius: 40px;
+    margin-top: 8px;
+    font-weight: 600;
+    color: #2a5a2a;
+  }
+
+  .surah-note {
+    background: white;
+    border-radius: 60px;
+    padding: 8px 18px;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #4a7a2e;
+    margin-bottom: 24px;
+    border-right: 4px solid #5a9e3e;
+    font-family: 'Cairo', sans-serif;
+  }
+
+  /* audio control - clean */
+  .audio-section {
+    background: #ffffff;
+    border-radius: 60px;
+    padding: 10px 20px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid #c8dbbc;
+  }
+
+  .play-button {
+    background: #2c6e2c;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 6px 12px rgba(44, 110, 44, 0.25);
+    border: none;
+    font-size: 1.6rem;
+    color: white;
+  }
+  .play-button:hover {
+    background: #1e551e;
+    transform: scale(1.02);
+  }
+  .play-button:active {
+    transform: scale(0.96);
+  }
+
+  .audio-status {
+    flex: 1;
+    text-align: center;
+  }
+  .status-text {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4a7a2e;
+  }
+  .progress-bar-bg {
+    background: #e0e8d8;
+    height: 5px;
+    border-radius: 8px;
+    margin-top: 6px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .progress-fill {
+    background: #5a9e3e;
+    width: 0%;
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.2s linear;
+  }
+
+  /* verses list - clean, no emojis */
+  .verses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .verse-item {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 18px 22px;
+    transition: all 0.2s ease;
+    border: 1px solid #d4e0ca;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  }
+  .verse-item.active {
+    background: #f6ffed;
+    border-right: 6px solid #5a9e3e;
+    box-shadow: 0 10px 20px -10px rgba(60, 100, 30, 0.12);
+    transform: translateY(-1px);
+  }
+
+  .verse-header {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 8px;
+    border-bottom: 1px dashed #d4e0ca;
+    padding-bottom: 6px;
+  }
+  .verse-num {
+    font-family: 'Cairo', monospace;
+    font-weight: 800;
+    background: #eff5e8;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    font-size: 1rem;
+    color: #2c6e2c;
+    border: 1px solid #c0d8b0;
+    flex-shrink: 0;
+  }
+  .arabic-text {
+    font-size: clamp(1.3rem, 4.5vw, 1.9rem);
+    font-weight: 700;
+    line-height: 1.6;
+    color: #2c2418;
+    flex: 1;
+    text-align: right;
+    word-break: break-word;
+  }
+
+  .footer-note {
+    text-align: center;
+    margin-top: 34px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.75rem;
+    color: #8ba87a;
+    border-top: 1px solid #d4e0ca;
+    padding-top: 20px;
+  }
+
+  @media (max-width: 520px) {
+    .verse-item {
+      padding: 14px 16px;
     }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    .verse-num {
+      width: 34px;
+      height: 34px;
+      font-size: 0.85rem;
     }
-    
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      background-color: #f9f9f9;
+    .audio-section {
+      gap: 12px;
     }
-    
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: white;
-      padding: 40px 0;
-      text-align: center;
-      border-radius: 0 0 10px 10px;
-      box-shadow: var(--shadow);
-    }
-    
-    .logo {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    
-    header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
-    
-    header p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-      opacity: 0.9;
-    }
-    
-    .content {
-      background-color: white;
-      border-radius: 10px;
-      padding: 40px;
-      margin: 30px 0;
-      box-shadow: var(--shadow);
-    }
-    
-    h2 {
-      color: var(--primary);
-      margin: 25px 0 15px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid var(--light);
-      display: flex;
-      align-items: center;
-    }
-    
-    h2 i {
-      margin-right: 10px;
-      color: var(--secondary);
-    }
-    
-    p {
-      margin-bottom: 15px;
-    }
-    
-    ul {
-      margin: 15px 0;
-      padding-left: 20px;
-    }
-    
-    li {
-      margin-bottom: 8px;
-      position: relative;
-      padding-left: 10px;
-    }
-    
-    li:before {
-      content: "•";
-      color: var(--secondary);
-      font-weight: bold;
-      position: absolute;
-      left: 0;
-    }
-    
-    .highlight-box {
-      background-color: var(--light);
-      border-left: 4px solid var(--secondary);
-      padding: 15px 20px;
-      margin: 20px 0;
-      border-radius: 0 5px 5px 0;
-    }
-    
-    .success-box {
-      background-color: #d4edda;
-      border-left: 4px solid #28a745;
-      padding: 15px 20px;
-      margin: 20px 0;
-      border-radius: 0 5px 5px 0;
-      color: #155724;
-    }
-    
-    a {
-      color: var(--secondary);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    
-    a:hover {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-    
-    .contact-info {
-      background-color: var(--light);
-      padding: 20px;
-      border-radius: 8px;
-      margin: 25px 0;
-      text-align: center;
-    }
-    
-    .contact-info p {
-      margin-bottom: 5px;
-    }
-    
-    .last-updated {
-      text-align: center;
-      color: var(--text-light);
-      font-size: 0.9rem;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #eee;
-    }
-    
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: var(--text-light);
-      font-size: 0.9rem;
-    }
-    
-    @media (max-width: 768px) {
-      .container {
-        padding: 10px;
-      }
-      
-      .content {
-        padding: 25px;
-      }
-      
-      header {
-        padding: 30px 0;
-      }
-      
-      header h1 {
-        fontSize: 1.8rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="logo">
-        <i class="fas fa-shield-alt"></i>
-      </div>
-      <h1>Privacy Policy</h1>
-      <p>PSC POINT - Your trusted partner for competitive exam preparation</p>
+<div class="container">
+  <div class="surah-header">
+    <div class="surah-title">
+      <span class="title-arabic">سُورَةُ يس</span>
+      <span class="title-secondary">(قلب القرآن)</span>
     </div>
-  </header>
-  
-  <div class="container">
-    <div class="content">
-      <div class="success-box">
-        <p><strong>PSC POINT</strong> is committed to protecting your privacy. We are proud to state that we do not collect, store, or share any personal information from our users.</p>
-      </div>
-      
-      <h2><i class="fas fa-database"></i> Information Collection</h2>
-      <p><strong>We Collect Nothing.</strong> PSC POINT operates on a strict no-data-collection policy:</p>
-      <ul>
-        <li>No personal information is collected</li>
-        <li>No usage data is tracked</li>
-        <li>No device information is gathered</li>
-        <li>No location data is accessed</li>
-        <li>No contacts or files are accessed</li>
-      </ul>
-      
-      <h2><i class="fas fa-mobile-alt"></i> Local Data Storage</h2>
-      <p>The app stores the following data locally on your device only:</p>
-      <ul>
-        <li>Quiz scores and progress</li>
-        <li>App settings and preferences</li>
-        <li>Bookmarked questions</li>
-        <li>Selected avatar (stored locally)</li>
-      </ul>
-      <p>This data never leaves your device and is not accessible to us or any third parties.</p>
-      
-      <h2><i class="fas fa-wifi"></i> Internet Connectivity</h2>
-      <p>The app requires internet access only for:</p>
-      <ul>
-        <li>Loading quiz questions and content updates</li>
-        <li>Fetching current affairs (when available)</li>
-      </ul>
-      <p>Even with internet access, no user data is transmitted from your device.</p>
-      
-      <h2><i class="fas fa-user-check"></i> Permissions</h2>
-      <p>The app requests minimal permissions for enhanced functionality:</p>
-      <ul>
-        <li><strong>Vibration:</strong> For haptic feedback on wrong answers (optional)</li>
-        <li><strong>Notifications:</strong> For daily study reminders (optional)</li>
-        <li><strong>Wake Lock:</strong> To keep screen active during quizzes</li>
-      </ul>
-      <p>All permissions are optional and the app functions fully without them.</p>
-      
-      <h2><i class="fas fa-lock"></i> Data Security</h2>
-      <p>Since we don't collect any data, there's no risk of data breaches or unauthorized access to your information. Your study progress and preferences remain securely on your device.</p>
-      
-      <h2><i class="fas fa-child"></i> Children's Privacy</h2>
-      <p>Our app is completely safe for users of all ages, including children under 13, as we do not collect any personal information.</p>
-      
-      <h2><i class="fas fa-sync-alt"></i> Changes to This Policy</h2>
-      <p>If we ever make changes to this policy that involve data collection, we will:</p>
-      <ul>
-        <li>Clearly notify all users</li>
-        <li>Explain what data is collected and why</li>
-        <li>Provide opt-out options</li>
-        <li>Update this privacy policy page</li>
-      </ul>
-      
-      <h2><i class="fas fa-envelope"></i> Contact Us</h2>
-      <p>If you have any questions about our privacy practices, please contact us at:</p>
-      
-      <div class="contact-info">
-        <p><strong>Email:</strong> ultimateme054@gmail.com</p>
-      </div>
-      
-      <div class="last-updated">
-        <p><i class="far fa-calendar-alt"></i> Last updated: October 2025</p>
-      </div>
-    </div>
-    
-    <footer>
-      <p>PSC POINT &copy; 2025. All rights reserved.</p>
-    </footer>
+    <div class="verse-range">الآيات ١ – ٨٣ (كاملة)</div>
   </div>
+
+  <div class="surah-note">
+    ﴿ يسٓ ۝ وَالْقُرْآنِ الْحَكِيمِ ﴾
+  </div>
+
+  <!-- audio panel -->
+  <div class="audio-section">
+    <button class="play-button" id="playToggleBtn" aria-label="play/pause">▶︎</button>
+    <div class="audio-status">
+      <div class="status-text" id="audioStatusLabel">استمع إلى السورة كاملة</div>
+      <div class="progress-bar-bg"><div class="progress-fill" id="audioProgressFill"></div></div>
+    </div>
+  </div>
+
+  <div class="verses-list" id="versesList"></div>
+  <div class="footer-note">✨ اضغط على أي آية للانتقال إليها · تلاوة واضحة للأطفال · انتقال تلقائي بين الآيات</div>
+</div>
+
+<audio id="quranAudio" preload="metadata"></audio>
+
+<script>
+  // ====================== SURAH YASEEN (36) VERSES 1 – 83 (COMPLETE) ======================
+  // Complete authentic Arabic text (Uthmani script) for all 83 verses
+  const versesData = [
+    { num: 1, arabic: "يسٓ" },
+    { num: 2, arabic: "وَالْقُرْآنِ الْحَكِيمِ" },
+    { num: 3, arabic: "إِنَّكَ لَمِنَ الْمُرْسَلِينَ" },
+    { num: 4, arabic: "عَلَىٰ صِرَاطٍ مُسْتَقِيمٍ" },
+    { num: 5, arabic: "تَنْزِيلَ الْعَزِيزِ الرَّحِيمِ" },
+    { num: 6, arabic: "لِتُنْذِرَ قَوْمًا مَا أُنْذِرَ آبَاؤُهُمْ فَهُمْ غَافِلُونَ" },
+    { num: 7, arabic: "لَقَدْ حَقَّ الْقَوْلُ عَلَىٰ أَكْثَرِهِمْ فَهُمْ لَا يُؤْمِنُونَ" },
+    { num: 8, arabic: "إِنَّا جَعَلْنَا فِي أَعْنَاقِهِمْ أَغْلَالًا فَهِيَ إِلَى الْأَذْقَانِ فَهُمْ مُقْمَحُونَ" },
+    { num: 9, arabic: "وَجَعَلْنَا مِنْ بَيْنِ أَيْدِيهِمْ سَدًّا وَمِنْ خَلْفِهِمْ سَدًّا فَأَغْشَيْنَاهُمْ فَهُمْ لَا يُبْصِرُونَ" },
+    { num: 10, arabic: "وَسَوَاءٌ عَلَيْهِمْ أَأَنْذَرْتَهُمْ أَمْ لَمْ تُنْذِرْهُمْ لَا يُؤْمِنُونَ" },
+    { num: 11, arabic: "إِنَّمَا تُنْذِرُ مَنِ اتَّبَعَ الذِّكْرَ وَخَشِيَ الرَّحْمَٰنَ بِالْغَيْبِ ۖ فَبَشِّرْهُ بِمَغْفِرَةٍ وَأَجْرٍ كَرِيمٍ" },
+    { num: 12, arabic: "إِنَّا نَحْنُ نُحْيِي الْمَوْتَىٰ وَنَكْتُبُ مَا قَدَّمُوا وَآثَارَهُمْ ۚ وَكُلَّ شَيْءٍ أَحْصَيْنَاهُ فِي إِمَامٍ مُبِينٍ" },
+    { num: 13, arabic: "وَاضْرِبْ لَهُمْ مَثَلًا أَصْحَابَ الْقَرْيَةِ إِذْ جَاءَهَا الْمُرْسَلُونَ" },
+    { num: 14, arabic: "إِذْ أَرْسَلْنَا إِلَيْهِمُ اثْنَيْنِ فَكَذَّبُوهُمَا فَعَزَّزْنَا بِثَالِثٍ فَقَالُوا إِنَّا إِلَيْكُمْ مُرْسَلُونَ" },
+    { num: 15, arabic: "قَالُوا مَا أَنْتُمْ إِلَّا بَشَرٌ مِثْلُنَا وَمَا أَنْزَلَ الرَّحْمَٰنُ مِنْ شَيْءٍ إِنْ أَنْتُمْ إِلَّا تَكْذِبُونَ" },
+    { num: 16, arabic: "قَالُوا رَبُّنَا يَعْلَمُ إِنَّا إِلَيْكُمْ لَمُرْسَلُونَ" },
+    { num: 17, arabic: "وَمَا عَلَيْنَا إِلَّا الْبَلَاغُ الْمُبِينُ" },
+    { num: 18, arabic: "قَالُوا إِنَّا تَطَيَّرْنَا بِكُمْ ۖ لَئِنْ لَمْ تَنْتَهُوا لَنَرْجُمَنَّكُمْ وَلَيَمَسَّنَّكُمْ مِنَّا عَذَابٌ أَلِيمٌ" },
+    { num: 19, arabic: "قَالُوا طَائِرُكُمْ مَعَكُمْ ۚ أَئِنْ ذُكِّرْتُمْ ۚ بَلْ أَنْتُمْ قَوْمٌ مُسْرِفُونَ" },
+    { num: 20, arabic: "وَجَاءَ مِنْ أَقْصَى الْمَدِينَةِ رَجُلٌ يَسْعَىٰ قَالَ يَا قَوْمِ اتَّبِعُوا الْمُرْسَلِينَ" },
+    { num: 21, arabic: "اتَّبِعُوا مَنْ لَا يَسْأَلُكُمْ أَجْرًا وَهُمْ مُهْتَدُونَ" },
+    { num: 22, arabic: "وَمَا لِيَ لَا أَعْبُدُ الَّذِي فَطَرَنِي وَإِلَيْهِ تُرْجَعُونَ" },
+    { num: 23, arabic: "أَأَتَّخِذُ مِنْ دُونِهِ آلِهَةً إِنْ يُرِدْنِ الرَّحْمَٰنُ بِضُرٍّ لَا تُغْنِ عَنِّي شَفَاعَتُهُمْ شَيْئًا وَلَا يُنْقِذُونِ" },
+    { num: 24, arabic: "إِنِّي إِذًا لَفِي ضَلَالٍ مُبِينٍ" },
+    { num: 25, arabic: "إِنِّي آمَنْتُ بِرَبِّكُمْ فَاسْمَعُونِ" },
+    { num: 26, arabic: "قِيلَ ادْخُلِ الْجَنَّةَ ۖ قَالَ يَا لَيْتَ قَوْمِي يَعْلَمُونَ" },
+    { num: 27, arabic: "بِمَا غَفَرَ لِي رَبِّي وَجَعَلَنِي مِنَ الْمُكْرَمِينَ" },
+    { num: 28, arabic: "وَمَا أَنْزَلْنَا عَلَىٰ قَوْمِهِ مِنْ بَعْدِهِ مِنْ جُنْدٍ مِنَ السَّمَاءِ وَمَا كُنَّا مُنْزِلِينَ" },
+    { num: 29, arabic: "إِنْ كَانَتْ إِلَّا صَيْحَةً وَاحِدَةً فَإِذَا هُمْ خَامِدُونَ" },
+    { num: 30, arabic: "يَا حَسْرَةً عَلَى الْعِبَادِ ۚ مَا يَأْتِيهِمْ مِنْ رَسُولٍ إِلَّا كَانُوا بِهِ يَسْتَهْزِئُونَ" },
+    { num: 31, arabic: "أَلَمْ يَرَوْا كَمْ أَهْلَكْنَا قَبْلَهُمْ مِنَ الْقُرُونِ أَنَّهُمْ إِلَيْهِمْ لَا يَرْجِعُونَ" },
+    { num: 32, arabic: "وَإِنْ كُلٌّ لَمَّا جَمِيعٌ لَدَيْنَا مُحْضَرُونَ" },
+    { num: 33, arabic: "وَآيَةٌ لَهُمُ الْأَرْضُ الْمَيْتَةُ أَحْيَيْنَاهَا وَأَخْرَجْنَا مِنْهَا حَبًّا فَمِنْهُ يَأْكُلُونَ" },
+    { num: 34, arabic: "وَجَعَلْنَا فِيهَا جَنَّاتٍ مِنْ نَخِيلٍ وَأَعْنَابٍ وَفَجَّرْنَا فِيهَا مِنَ الْعُيُونِ" },
+    { num: 35, arabic: "لِيَأْكُلُوا مِنْ ثَمَرِهِ وَمَا عَمِلَتْهُ أَيْدِيهِمْ ۚ أَفَلَا يَشْكُرُونَ" },
+    { num: 36, arabic: "سُبْحَانَ الَّذِي خَلَقَ الْأَزْوَاجَ كُلَّهَا مِمَّا تُنْبِتُ الْأَرْضُ وَمِنْ أَنْفُسِهِمْ وَمِمَّا لَا يَعْلَمُونَ" },
+    { num: 37, arabic: "وَآيَةٌ لَهُمُ اللَّيْلُ نَسْلَخُ مِنْهُ النَّهَارَ فَإِذَا هُمْ مُظْلِمُونَ" },
+    { num: 38, arabic: "وَالشَّمْسُ تَجْرِي لِمُسْتَقَرٍّ لَهَا ۚ ذَٰلِكَ تَقْدِيرُ الْعَزِيزِ الْعَلِيمِ" },
+    { num: 39, arabic: "وَالْقَمَرَ قَدَّرْنَاهُ مَنَازِلَ حَتَّىٰ عَادَ كَالْعُرْجُونِ الْقَدِيمِ" },
+    { num: 40, arabic: "لَا الشَّمْسُ يَنْبَغِي لَهَا أَنْ تُدْرِكَ الْقَمَرَ وَلَا اللَّيْلُ سَابِقُ النَّهَارِ ۚ وَكُلٌّ فِي فَلَكٍ يَسْبَحُونَ" },
+    { num: 41, arabic: "وَآيَةٌ لَهُمْ أَنَّا حَمَلْنَا ذُرِّيَّتَهُمْ فِي الْفُلْكِ الْمَشْحُونِ" },
+    { num: 42, arabic: "وَخَلَقْنَا لَهُمْ مِنْ مِثْلِهِ مَا يَرْكَبُونَ" },
+    { num: 43, arabic: "وَإِنْ نَشَأْ نُغْرِقْهُمْ فَلَا صَرِيخَ لَهُمْ وَلَا هُمْ يُنْقَذُونَ" },
+    { num: 44, arabic: "إِلَّا رَحْمَةً مِنَّا وَمَتَاعًا إِلَىٰ حِينٍ" },
+    { num: 45, arabic: "وَإِذَا قِيلَ لَهُمُ اتَّقُوا مَا بَيْنَ أَيْدِيكُمْ وَمَا خَلْفَكُمْ لَعَلَّكُمْ تُرْحَمُونَ" },
+    { num: 46, arabic: "وَمَا تَأْتِيهِمْ مِنْ آيَةٍ مِنْ آيَاتِ رَبِّهِمْ إِلَّا كَانُوا عَنْهَا مُعْرِضِينَ" },
+    { num: 47, arabic: "وَإِذَا قِيلَ لَهُمْ أَنْفِقُوا مِمَّا رَزَقَكُمُ اللَّهُ قَالَ الَّذِينَ كَفَرُوا لِلَّذِينَ آمَنُوا أَنُطْعِمُ مَنْ لَوْ يَشَاءُ اللَّهُ أَطْعَمَهُ إِنْ أَنْتُمْ إِلَّا فِي ضَلَالٍ مُبِينٍ" },
+    { num: 48, arabic: "وَيَقُولُونَ مَتَىٰ هَٰذَا الْوَعْدُ إِنْ كُنْتُمْ صَادِقِينَ" },
+    { num: 49, arabic: "مَا يَنْظُرُونَ إِلَّا صَيْحَةً وَاحِدَةً تَأْخُذُهُمْ وَهُمْ يَخِصِّمُونَ" },
+    { num: 50, arabic: "فَلَا يَسْتَطِيعُونَ تَوْصِيَةً وَلَا إِلَىٰ أَهْلِهِمْ يَرْجِعُونَ" },
+    { num: 51, arabic: "وَنُفِخَ فِي الصُّورِ فَإِذَا هُمْ مِنَ الْأَجْدَاثِ إِلَىٰ رَبِّهِمْ يَنْسِلُونَ" },
+    { num: 52, arabic: "قَالُوا يَا وَيْلَنَا مَنْ بَعَثَنَا مِنْ مَرْقَدِنَا ۜ ۗ هَٰذَا مَا وَعَدَ الرَّحْمَٰنُ وَصَدَقَ الْمُرْسَلُونَ" },
+    { num: 53, arabic: "إِنْ كَانَتْ إِلَّا صَيْحَةً وَاحِدَةً فَإِذَا هُمْ جَمِيعٌ لَدَيْنَا مُحْضَرُونَ" },
+    { num: 54, arabic: "فَالْيَوْمَ لَا تُظْلَمُ نَفْسٌ شَيْئًا وَلَا تُجْزَوْنَ إِلَّا مَا كُنْتُمْ تَعْمَلُونَ" },
+    { num: 55, arabic: "إِنَّ أَصْحَابَ الْجَنَّةِ الْيَوْمَ فِي شُغُلٍ فَاكِهُونَ" },
+    { num: 56, arabic: "هُمْ وَأَزْوَاجُهُمْ فِي ظِلَالٍ عَلَى الْأَرَائِكِ مُتَّكِئُونَ" },
+    { num: 57, arabic: "لَهُمْ فِيهَا فَاكِهَةٌ وَلَهُمْ مَا يَدَّعُونَ" },
+    { num: 58, arabic: "سَلَامٌ قَوْلًا مِنْ رَبٍّ رَحِيمٍ" },
+    { num: 59, arabic: "وَامْتَازُوا الْيَوْمَ أَيُّهَا الْمُجْرِمُونَ" },
+    { num: 60, arabic: "أَلَمْ أَعْهَدْ إِلَيْكُمْ يَا بَنِي آدَمَ أَنْ لَا تَعْبُدُوا الشَّيْطَانَ ۖ إِنَّهُ لَكُمْ عَدُوٌّ مُبِينٌ" },
+    { num: 61, arabic: "وَأَنِ اعْبُدُونِي ۚ هَٰذَا صِرَاطٌ مُسْتَقِيمٌ" },
+    { num: 62, arabic: "وَلَقَدْ أَضَلَّ مِنْكُمْ جِبِلًّا كَثِيرًا ۖ أَفَلَمْ تَكُونُوا تَعْقِلُونَ" },
+    { num: 63, arabic: "هَٰذِهِ جَهَنَّمُ الَّتِي كُنْتُمْ تُوعَدُونَ" },
+    { num: 64, arabic: "اصْلَوْهَا الْيَوْمَ بِمَا كُنْتُمْ تَكْفُرُونَ" },
+    { num: 65, arabic: "الْيَوْمَ نَخْتِمُ عَلَىٰ أَفْوَاهِهِمْ وَتُكَلِّمُنَا أَيْدِيهِمْ وَتَشْهَدُ أَرْجُلُهُمْ بِمَا كَانُوا يَكْسِبُونَ" },
+    { num: 66, arabic: "وَلَوْ نَشَاءُ لَطَمَسْنَا عَلَىٰ أَعْيُنِهِمْ فَاسْتَبَقُوا الصِّرَاطَ فَأَنَّىٰ يُبْصِرُونَ" },
+    { num: 67, arabic: "وَلَوْ نَشَاءُ لَمَسَخْنَاهُمْ عَلَىٰ مَكَانَتِهِمْ فَمَا اسْتَطَاعُوا مُضِيًّا وَلَا يَرْجِعُونَ" },
+    { num: 68, arabic: "وَمَنْ نُعَمِّرْهُ نُنَكِّسْهُ فِي الْخَلْقِ ۚ أَفَلَا يَعْقِلُونَ" },
+    { num: 69, arabic: "وَمَا عَلَّمْنَاهُ الشِّعْرَ وَمَا يَنْبَغِي لَهُ ۚ إِنْ هُوَ إِلَّا ذِكْرٌ وَقُرْآنٌ مُبِينٌ" },
+    { num: 70, arabic: "لِيُنْذِرَ مَنْ كَانَ حَيًّا وَيَحِقَّ الْقَوْلُ عَلَى الْكَافِرِينَ" },
+    { num: 71, arabic: "أَوَلَمْ يَرَوْا أَنَّا خَلَقْنَا لَهُمْ مِمَّا عَمِلَتْ أَيْدِينَا أَنْعَامًا فَهُمْ لَهَا مَالِكُونَ" },
+    { num: 72, arabic: "وَذَلَّلْنَاهَا لَهُمْ فَمِنْهَا رَكُوبُهُمْ وَمِنْهَا يَأْكُلُونَ" },
+    { num: 73, arabic: "وَلَهُمْ فِيهَا مَنَافِعُ وَمَشَارِبُ ۚ أَفَلَا يَشْكُرُونَ" },
+    { num: 74, arabic: "وَاتَّخَذُوا مِنْ دُونِ اللَّهِ آلِهَةً لَعَلَّهُمْ يُنْصَرُونَ" },
+    { num: 75, arabic: "لَا يَسْتَطِيعُونَ نَصْرَهُمْ وَهُمْ لَهُمْ جُنْدٌ مُحْضَرُونَ" },
+    { num: 76, arabic: "فَلَا يَحْزُنْكَ قَوْلُهُمْ ۘ إِنَّا نَعْلَمُ مَا يُسِرُّونَ وَمَا يُعْلِنُونَ" },
+    { num: 77, arabic: "أَوَلَمْ يَرَ الْإِنْسَانُ أَنَّا خَلَقْنَاهُ مِنْ نُطْفَةٍ فَإِذَا هُوَ خَصِيمٌ مُبِينٌ" },
+    { num: 78, arabic: "وَضَرَبَ لَنَا مَثَلًا وَنَسِيَ خَلْقَهُ ۖ قَالَ مَنْ يُحْيِي الْعِظَامَ وَهِيَ رَمِيمٌ" },
+    { num: 79, arabic: "قُلْ يُحْيِيهَا الَّذِي أَنْشَأَهَا أَوَّلَ مَرَّةٍ ۖ وَهُوَ بِكُلِّ خَلْقٍ عَلِيمٌ" },
+    { num: 80, arabic: "الَّذِي جَعَلَ لَكُمْ مِنَ الشَّجَرِ الْأَخْضَرِ نَارًا فَإِذَا أَنْتُمْ مِنْهُ تُوقِدُونَ" },
+    { num: 81, arabic: "أَوَلَيْسَ الَّذِي خَلَقَ السَّمَاوَاتِ وَالْأَرْضَ بِقَادِرٍ عَلَىٰ أَنْ يَخْلُقَ مِثْلَهُمْ ۚ بَلَىٰ وَهُوَ الْخَلَّاقُ الْعَلِيمُ" },
+    { num: 82, arabic: "إِنَّمَا أَمْرُهُ إِذَا أَرَادَ شَيْئًا أَنْ يَقُولَ لَهُ كُنْ فَيَكُونُ" },
+    { num: 83, arabic: "فَسُبْحَانَ الَّذِي بِيَدِهِ مَلَكُوتُ كُلِّ شَيْءٍ وَإِلَيْهِ تُرْجَعُونَ" }
+  ];
+
+  // Audio URLs: Surah 036 Yaseen (Alafasy high quality)
+  function getAyahUrl(verseNumber) {
+    const surahCode = "036";
+    const versePadded = String(verseNumber).padStart(3, '0');
+    return `https://everyayah.com/data/Alafasy_128kbps/${surahCode}${versePadded}.mp3`;
+  }
+
+  // DOM elements
+  const versesContainer = document.getElementById('versesList');
+  const audioElem = document.getElementById('quranAudio');
+  const playBtn = document.getElementById('playToggleBtn');
+  const statusLabel = document.getElementById('audioStatusLabel');
+  const progressFillBar = document.getElementById('audioProgressFill');
+
+  let currentIdx = 0;
+  let isPlaying = false;
+  let autoNextTimeout = null;
+
+  // Build all 83 verse cards
+  function buildVerses() {
+    versesContainer.innerHTML = '';
+    versesData.forEach((verse, idx) => {
+      const card = document.createElement('div');
+      card.className = 'verse-item';
+      card.setAttribute('data-index', idx);
+      card.setAttribute('data-verse', verse.num);
+      card.innerHTML = `
+        <div class="verse-header">
+          <span class="verse-num">${verse.num}</span>
+          <div class="arabic-text">${verse.arabic}</div>
+        </div>
+      `;
+      card.addEventListener('click', (e) => {
+        e.stopPropagation();
+        jumpToVerse(idx);
+      });
+      versesContainer.appendChild(card);
+    });
+  }
+
+  function setActiveVerse(index, smoothScroll = true) {
+    const cards = document.querySelectorAll('.verse-item');
+    cards.forEach((card, i) => {
+      if (i === index) card.classList.add('active');
+      else card.classList.remove('active');
+    });
+    const progressPercent = ((index + 1) / versesData.length) * 100;
+    progressFillBar.style.width = `${progressPercent}%`;
+    
+    if (smoothScroll) {
+      const activeCard = document.querySelector(`.verse-item[data-index='${index}']`);
+      if (activeCard) {
+        activeCard.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+      }
+    }
+  }
+
+  function clearNextTimeout() {
+    if (autoNextTimeout) { clearTimeout(autoNextTimeout); autoNextTimeout = null; }
+  }
+
+  function updateUIStatus(verseIdx, playing) {
+    const verseNum = versesData[verseIdx].num;
+    if (playing) {
+      statusLabel.innerHTML = `🔊 تلاوة الآية ${verseNum}`;
+    } else {
+      if (audioElem.paused && audioElem.currentTime === 0) {
+        statusLabel.innerHTML = `🎧 اضغط للاستماع — الآية ${verseNum}`;
+      } else if (audioElem.paused && audioElem.currentTime > 0) {
+        statusLabel.innerHTML = `⏸ متوقف عند الآية ${verseNum}`;
+      } else {
+        statusLabel.innerHTML = `📖 يستمع إلى الآية ${verseNum}`;
+      }
+    }
+  }
+
+  function playVerse(index, autoContinue = true) {
+    if (index < 0 || index >= versesData.length) return;
+    clearNextTimeout();
+    audioElem.pause();
+    isPlaying = false;
+    currentIdx = index;
+    const verse = versesData[currentIdx];
+    audioElem.src = getAyahUrl(verse.num);
+    audioElem.load();
+    setActiveVerse(currentIdx, true);
+    updateUIStatus(currentIdx, true);
+    
+    const playPromise = audioElem.play();
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        isPlaying = true;
+        playBtn.innerHTML = '⏸︎';
+        updateUIStatus(currentIdx, true);
+        if (autoContinue) {
+          audioElem.onended = () => {
+            if (currentIdx + 1 < versesData.length) {
+              autoNextTimeout = setTimeout(() => playVerse(currentIdx + 1, true), 520);
+            } else {
+              isPlaying = false;
+              playBtn.innerHTML = '▶︎';
+              statusLabel.innerHTML = '✅ تمت تلاوة سورة يس كاملة 🌟';
+              progressFillBar.style.width = '100%';
+              audioElem.onended = null;
+              clearNextTimeout();
+            }
+          };
+        }
+      }).catch(err => {
+        isPlaying = false;
+        playBtn.innerHTML = '▶︎';
+        statusLabel.innerHTML = '⚠️ يرجى التفاعل المباشر';
+        clearNextTimeout();
+      });
+    }
+    audioElem.onpause = () => {
+      if (isPlaying) { isPlaying = false; playBtn.innerHTML = '▶︎'; updateUIStatus(currentIdx, false); clearNextTimeout(); }
+    };
+    audioElem.onplay = () => {
+      if (!isPlaying) { isPlaying = true; playBtn.innerHTML = '⏸︎'; updateUIStatus(currentIdx, true); }
+    };
+    audioElem.onerror = () => {
+      isPlaying = false; playBtn.innerHTML = '▶︎'; statusLabel.innerHTML = '⚠️ خطأ في التحميل';
+      clearNextTimeout();
+    };
+  }
+
+  function jumpToVerse(index) {
+    clearNextTimeout();
+    if (index === currentIdx && isPlaying) {
+      audioElem.pause();
+      playVerse(index, true);
+    } else {
+      playVerse(index, true);
+    }
+  }
+
+  function togglePlayback() {
+    if (!audioElem.src || audioElem.ended) {
+      if (audioElem.ended) currentIdx = 0;
+      clearNextTimeout();
+      playVerse(currentIdx, true);
+      return;
+    }
+    if (isPlaying) {
+      audioElem.pause();
+      isPlaying = false;
+      playBtn.innerHTML = '▶︎';
+      statusLabel.innerHTML = `⏸ توقف عند الآية ${versesData[currentIdx].num}`;
+      clearNextTimeout();
+      audioElem.onended = null;
+    } else {
+      audioElem.play().then(() => {
+        isPlaying = true;
+        playBtn.innerHTML = '⏸︎';
+        updateUIStatus(currentIdx, true);
+        audioElem.onended = () => {
+          if (currentIdx + 1 < versesData.length) {
+            autoNextTimeout = setTimeout(() => playVerse(currentIdx + 1, true), 520);
+          } else {
+            isPlaying = false; playBtn.innerHTML = '▶︎';
+            statusLabel.innerHTML = '✨ أتممت سورة يس ✨';
+            progressFillBar.style.width = '100%';
+          }
+        };
+      }).catch(() => { statusLabel.innerHTML = '⚠️ يلزم تفاعل'; });
+    }
+  }
+
+  function init() {
+    buildVerses();
+    setActiveVerse(0, false);
+    playBtn.innerHTML = '▶︎';
+    statusLabel.innerHTML = '🎙️ استمع لسورة يس كاملة (١–٨٣)';
+    progressFillBar.style.width = '0%';
+    currentIdx = 0;
+    playBtn.addEventListener('click', (e) => { e.preventDefault(); togglePlayback(); });
+  }
+  init();
+</script>
 </body>
 </html>
