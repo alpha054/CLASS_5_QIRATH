@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>سورة يونس | الآيات 98-106 - للأطفال</title>
+<title>يونس 107-109 & هود 1-5 - للأطفال</title>
 <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   * {
@@ -193,6 +193,12 @@
     border: 1px solid #c0d8b0;
     flex-shrink: 0;
   }
+  .verse-num .surah-label {
+    font-size: 0.55rem;
+    display: block;
+    font-weight: 600;
+    color: #4a7a4a;
+  }
   .arabic-text {
     font-size: clamp(1.3rem, 4.5vw, 1.9rem);
     font-weight: 700;
@@ -224,14 +230,14 @@
 <div class="container">
   <div class="surah-header">
     <div class="surah-title">
-      <span class="title-arabic">سُورَةُ يُونُس</span>
-      <span class="title-secondary">(عليه السلام)</span>
+      <span class="title-arabic">يُونُس ١٠٧–١٠٩ & هُود ١–٥</span>
+      <span class="title-secondary">(خواتيم يونس وبداية هود)</span>
     </div>
-    <div class="verse-range">الآيات ٩٨ – ١٠٦</div>
+    <div class="verse-range">الآيات ١٠٧–١٠٩ من يونس · الآيات ١–٥ من هود</div>
   </div>
 
   <div class="surah-note">
-    ﴿ فَلَوْلَا كَانَتْ قَرْيَةٌ آمَنَتْ فَنَفَعَهَا إِيمَانُهَا ﴾
+    ﴿ قُلْ يَا أَيُّهَا النَّاسُ قَدْ جَاءَكُمُ الْحَقُّ مِنْ رَبِّكُمْ ﴾
   </div>
 
   <div class="audio-section">
@@ -249,22 +255,26 @@
 <audio id="quranAudio" preload="metadata"></audio>
 
 <script>
-  // ====================== SURAH YUNUS (10) VERSES 98 – 106 ======================
+  // ======================================================================
+  // SURAH YUNUS (10) VERSES 107–109  +  SURAH HUD (11) VERSES 1–5
+  // Each entry includes surah number and verse number for audio URL
+  // ======================================================================
   const versesData = [
-    { num: 98, arabic: "فَلَوْلَا كَانَتْ قَرْيَةٌ آمَنَتْ فَنَفَعَهَا إِيمَانُهَا إِلَّا قَوْمَ يُونُسَ لَمَّا آمَنُوا كَشَفْنَا عَنْهُمْ عَذَابَ الْخِزْيِ فِي الْحَيَاةِ الدُّنْيَا وَمَتَّعْنَاهُمْ إِلَىٰ حِينٍ" },
-    { num: 99, arabic: "وَلَوْ شَاءَ رَبُّكَ لَآمَنَ مَنْ فِي الْأَرْضِ كُلُّهُمْ جَمِيعًا ۚ أَفَأَنْتَ تُكْرِهُ النَّاسَ حَتَّىٰ يَكُونُوا مُؤْمِنِينَ" },
-    { num: 100, arabic: "وَمَا كَانَ لِنَفْسٍ أَنْ تُؤْمِنَ إِلَّا بِإِذْنِ اللَّهِ ۚ وَيَجْعَلُ الرِّجْسَ عَلَى الَّذِينَ لَا يَعْقِلُونَ" },
-    { num: 101, arabic: "قُلِ انْظُرُوا مَاذَا فِي السَّمَاوَاتِ وَالْأَرْضِ ۚ وَمَا تُغْنِي الْآيَاتُ وَالنُّذُرُ عَنْ قَوْمٍ لَا يُؤْمِنُونَ" },
-    { num: 102, arabic: "فَهَلْ يَنْتَظِرُونَ إِلَّا مِثْلَ أَيَّامِ الَّذِينَ خَلَوْا مِنْ قَبْلِهِمْ ۚ قُلْ فَانْتَظِرُوا إِنِّي مَعَكُمْ مِنَ الْمُنْتَظِرِينَ" },
-    { num: 103, arabic: "ثُمَّ نُنَجِّي رُسُلَنَا وَالَّذِينَ آمَنُوا ۚ كَذَٰلِكَ حَقًّا عَلَيْنَا نُنْجِ الْمُؤْمِنِينَ" },
-    { num: 104, arabic: "قُلْ يَا أَيُّهَا النَّاسُ إِنْ كُنْتُمْ فِي شَكٍّ مِنْ دِينِي فَلَا أَعْبُدُ الَّذِينَ تَعْبُدُونَ مِنْ دُونِ اللَّهِ وَلَٰكِنْ أَعْبُدُ اللَّهَ الَّذِي يَتَوَفَّاكُمْ ۖ وَأُمِرْتُ أَنْ أَكُونَ مِنَ الْمُؤْمِنِينَ" },
-    { num: 105, arabic: "وَأَنْ أَقِمْ وَجْهَكَ لِلدِّينِ حَنِيفًا وَلَا تَكُونَنَّ مِنَ الْمُشْرِكِينَ" },
-    { num: 106, arabic: "وَلَا تَدْعُ مِنْ دُونِ اللَّهِ مَا لَا يَنْفَعُكَ وَلَا يَضُرُّكَ ۖ فَإِنْ فَعَلْتَ فَإِنَّكَ إِذًا مِنَ الظَّالِمِينَ" }
+    // Yunus 107–109
+    { surah: 10, num: 107, arabic: "وَإِنْ يَمْسَسْكَ اللَّهُ بِضُرٍّ فَلَا كَاشِفَ لَهُ إِلَّا هُوَ ۖ وَإِنْ يُرِدْكَ بِخَيْرٍ فَلَا رَادَّ لِفَضْلِهِ ۚ يُصِيبُ بِهِ مَنْ يَشَاءُ مِنْ عِبَادِهِ ۚ وَهُوَ الْغَفُورُ الرَّحِيمُ" },
+    { surah: 10, num: 108, arabic: "قُلْ يَا أَيُّهَا النَّاسُ قَدْ جَاءَكُمُ الْحَقُّ مِنْ رَبِّكُمْ ۖ فَمَنِ اهْتَدَىٰ فَإِنَّمَا يَهْتَدِي لِنَفْسِهِ ۖ وَمَنْ ضَلَّ فَإِنَّمَا يَضِلُّ عَلَيْهَا ۖ وَمَا أَنَا عَلَيْكُمْ بِوَكِيلٍ" },
+    { surah: 10, num: 109, arabic: "وَاتَّبِعْ مَا يُوحَىٰ إِلَيْكَ وَاصْبِرْ حَتَّىٰ يَحْكُمَ اللَّهُ ۚ وَهُوَ خَيْرُ الْحَاكِمِينَ" },
+    // Hud 1–5
+    { surah: 11, num: 1, arabic: "الر ۚ كِتَابٌ أُحْكِمَتْ آيَاتُهُ ثُمَّ فُصِّلَتْ مِنْ لَدُنْ حَكِيمٍ خَبِيرٍ" },
+    { surah: 11, num: 2, arabic: "أَلَّا تَعْبُدُوا إِلَّا اللَّهَ ۚ إِنَّنِي لَكُمْ مِنْهُ نَذِيرٌ وَبَشِيرٌ" },
+    { surah: 11, num: 3, arabic: "وَأَنِ اسْتَغْفِرُوا رَبَّكُمْ ثُمَّ تُوبُوا إِلَيْهِ يُمَتِّعْكُمْ مَتَاعًا حَسَنًا إِلَىٰ أَجَلٍ مُسَمًّى وَيُؤْتِ كُلَّ ذِي فَضْلٍ فَضْلَهُ ۖ وَإِنْ تَوَلَّوْا فَإِنِّي أَخَافُ عَلَيْكُمْ عَذَابَ يَوْمٍ كَبِيرٍ" },
+    { surah: 11, num: 4, arabic: "إِلَى اللَّهِ مَرْجِعُكُمْ ۖ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ" },
+    { surah: 11, num: 5, arabic: "أَلَا إِنَّهُمْ يَثْنُونَ صُدُورَهُمْ لِيَسْتَخْفُوا مِنْهُ ۚ أَلَا حِينَ يَسْتَغْشُونَ ثِيَابَهُمْ يَعْلَمُ مَا يُسِرُّونَ وَمَا يُعْلِنُونَ ۚ إِنَّهُ عَلِيمٌ بِذَاتِ الصُّدُورِ" }
   ];
 
-  function getAyahUrl(verseNumber) {
-    const surahCode = "010";
-    const versePadded = String(verseNumber).padStart(3, '0');
+  function getAyahUrl(surahNum, verseNum) {
+    const surahCode = String(surahNum).padStart(3, '0');
+    const versePadded = String(verseNum).padStart(3, '0');
     return `https://everyayah.com/data/Alafasy_128kbps/${surahCode}${versePadded}.mp3`;
   }
 
@@ -285,9 +295,12 @@
       card.className = 'verse-item';
       card.setAttribute('data-index', idx);
       card.setAttribute('data-verse', verse.num);
+      card.setAttribute('data-surah', verse.surah);
+      // Show surah label for clarity
+      const surahLabel = verse.surah === 10 ? 'يونس' : 'هود';
       card.innerHTML = `
         <div class="verse-header">
-          <span class="verse-num">${verse.num}</span>
+          <span class="verse-num">${verse.num}<span class="surah-label">${surahLabel}</span></span>
           <div class="arabic-text">${verse.arabic}</div>
         </div>
       `;
@@ -321,16 +334,17 @@
   }
 
   function updateUIStatus(verseIdx, playing) {
-    const verseNum = versesData[verseIdx].num;
+    const verse = versesData[verseIdx];
+    const surahName = verse.surah === 10 ? 'يونس' : 'هود';
     if (playing) {
-      statusLabel.innerHTML = `🔊 تلاوة الآية ${verseNum}`;
+      statusLabel.innerHTML = `🔊 تلاوة ${surahName} ${verse.num}`;
     } else {
       if (audioElem.paused && audioElem.currentTime === 0) {
-        statusLabel.innerHTML = `🎧 اضغط للاستماع — الآية ${verseNum}`;
+        statusLabel.innerHTML = `🎧 اضغط للاستماع — ${surahName} ${verse.num}`;
       } else if (audioElem.paused && audioElem.currentTime > 0) {
-        statusLabel.innerHTML = `⏸ متوقف عند الآية ${verseNum}`;
+        statusLabel.innerHTML = `⏸ متوقف عند ${surahName} ${verse.num}`;
       } else {
-        statusLabel.innerHTML = `📖 يستمع إلى الآية ${verseNum}`;
+        statusLabel.innerHTML = `📖 يستمع إلى ${surahName} ${verse.num}`;
       }
     }
   }
@@ -342,7 +356,7 @@
     isPlaying = false;
     currentIdx = index;
     const verse = versesData[currentIdx];
-    audioElem.src = getAyahUrl(verse.num);
+    audioElem.src = getAyahUrl(verse.surah, verse.num);
     audioElem.load();
     setActiveVerse(currentIdx, true);
     updateUIStatus(currentIdx, true);
@@ -356,11 +370,11 @@
         if (autoContinue) {
           audioElem.onended = () => {
             if (currentIdx + 1 < versesData.length) {
-              autoNextTimeout = setTimeout(() => playVerse(currentIdx + 1, true), 600);
+              autoNextTimeout = setTimeout(() => playVerse(currentIdx + 1, true), 580);
             } else {
               isPlaying = false;
               playBtn.innerHTML = '▶︎';
-              statusLabel.innerHTML = '✅ تمت تلاوة الآيات (٩٨–١٠٦) من سورة يونس 🌟';
+              statusLabel.innerHTML = '✅ تمت تلاوة الآيات (يونس ١٠٧–١٠٩ & هود ١–٥) 🌟';
               progressFillBar.style.width = '100%';
               audioElem.onended = null;
               clearNextTimeout();
@@ -407,7 +421,8 @@
       audioElem.pause();
       isPlaying = false;
       playBtn.innerHTML = '▶︎';
-      statusLabel.innerHTML = `⏸ توقف عند الآية ${versesData[currentIdx].num}`;
+      const verse = versesData[currentIdx];
+      statusLabel.innerHTML = `⏸ توقف عند ${verse.surah === 10 ? 'يونس' : 'هود'} ${verse.num}`;
       clearNextTimeout();
       audioElem.onended = null;
     } else {
@@ -417,10 +432,10 @@
         updateUIStatus(currentIdx, true);
         audioElem.onended = () => {
           if (currentIdx + 1 < versesData.length) {
-            autoNextTimeout = setTimeout(() => playVerse(currentIdx + 1, true), 600);
+            autoNextTimeout = setTimeout(() => playVerse(currentIdx + 1, true), 580);
           } else {
             isPlaying = false; playBtn.innerHTML = '▶︎';
-            statusLabel.innerHTML = '✨ أتممت الآيات (يونس ٩٨–١٠٦) ✨';
+            statusLabel.innerHTML = '✨ أتممت الآيات (يونس ١٠٧–١٠٩ & هود ١–٥) ✨';
             progressFillBar.style.width = '100%';
           }
         };
@@ -432,7 +447,7 @@
     buildVerses();
     setActiveVerse(0, false);
     playBtn.innerHTML = '▶︎';
-    statusLabel.innerHTML = '🎙️ استمع لآيات يونس ٩٨–١٠٦';
+    statusLabel.innerHTML = '🎙️ استمع لآيات يونس ١٠٧–١٠٩ و هود ١–٥';
     progressFillBar.style.width = '0%';
     currentIdx = 0;
     playBtn.addEventListener('click', (e) => { e.preventDefault(); togglePlayback(); });
