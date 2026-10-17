@@ -2,441 +2,86 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>سورة يوسف | الآيات 104-111 (ختام السورة) - للأطفال</title>
-<link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eaf3e4">
+<title>سورة يس | الآيات ٣٧–٤٨</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    background: linear-gradient(145deg, #f0f4f0 0%, #e2e8da 100%);
-    font-family: 'Scheherazade New', 'Cairo', serif;
-    min-height: 100vh;
-    direction: rtl;
-    padding-bottom: 50px;
-  }
-
-  .container {
-    max-width: 880px;
-    margin: 0 auto;
-    padding: 20px 16px 40px;
-  }
-
-  .surah-header {
-    background: #ffffffcc;
-    backdrop-filter: blur(4px);
-    border-radius: 50px;
-    padding: 18px 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid #c8dbc0;
-  }
-
-  .surah-title {
-    font-size: clamp(1.8rem, 6vw, 2.6rem);
-    font-weight: 800;
-    color: #2c6e2c;
-    letter-spacing: -0.3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .title-arabic {
-    font-family: 'Scheherazade New', serif;
-  }
-  .title-secondary {
-    font-size: 0.85rem;
-    background: #e2ecd9;
-    padding: 3px 14px;
-    border-radius: 100px;
-    font-family: 'Cairo', sans-serif;
-    color: #2c6e2c;
-  }
-
-  .verse-range {
-    font-family: 'Cairo', sans-serif;
-    font-size: 0.9rem;
-    background: #d9e8d0;
-    display: inline-block;
-    padding: 4px 22px;
-    border-radius: 40px;
-    margin-top: 8px;
-    font-weight: 600;
-    color: #2a5a2a;
-  }
-
-  .surah-note {
-    background: white;
-    border-radius: 60px;
-    padding: 8px 18px;
-    text-align: center;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #4a7a2e;
-    margin-bottom: 24px;
-    border-right: 4px solid #5a9e3e;
-    font-family: 'Cairo', sans-serif;
-  }
-
-  .audio-section {
-    background: #ffffff;
-    border-radius: 60px;
-    padding: 10px 20px;
-    margin-bottom: 32px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-    border: 1px solid #c8dbbc;
-  }
-
-  .play-button {
-    background: #2c6e2c;
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s;
-    box-shadow: 0 6px 12px rgba(44, 110, 44, 0.25);
-    border: none;
-    font-size: 1.6rem;
-    color: white;
-  }
-  .play-button:hover {
-    background: #1e551e;
-    transform: scale(1.02);
-  }
-  .play-button:active {
-    transform: scale(0.96);
-  }
-
-  .audio-status {
-    flex: 1;
-    text-align: center;
-  }
-  .status-text {
-    font-family: 'Cairo', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #4a7a2e;
-  }
-  .progress-bar-bg {
-    background: #e0e8d8;
-    height: 5px;
-    border-radius: 8px;
-    margin-top: 6px;
-    width: 100%;
-    overflow: hidden;
-  }
-  .progress-fill {
-    background: #5a9e3e;
-    width: 0%;
-    height: 100%;
-    border-radius: 8px;
-    transition: width 0.2s linear;
-  }
-
-  .verses-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .verse-item {
-    background: #ffffff;
-    border-radius: 28px;
-    padding: 18px 22px;
-    transition: all 0.2s ease;
-    border: 1px solid #d4e0ca;
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-  }
-  .verse-item.active {
-    background: #f6ffed;
-    border-right: 6px solid #5a9e3e;
-    box-shadow: 0 10px 20px -10px rgba(60, 100, 30, 0.12);
-    transform: translateY(-1px);
-  }
-
-  .verse-header {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    margin-bottom: 8px;
-    border-bottom: 1px dashed #d4e0ca;
-    padding-bottom: 6px;
-  }
-  .verse-num {
-    font-family: 'Cairo', monospace;
-    font-weight: 800;
-    background: #eff5e8;
-    width: 40px;
-    height: 40px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 40px;
-    font-size: 1rem;
-    color: #2c6e2c;
-    border: 1px solid #c0d8b0;
-    flex-shrink: 0;
-  }
-  .arabic-text {
-    font-size: clamp(1.3rem, 4.5vw, 1.9rem);
-    font-weight: 700;
-    line-height: 1.6;
-    color: #2c2418;
-    flex: 1;
-    text-align: right;
-    word-break: break-word;
-  }
-
-  .footer-note {
-    text-align: center;
-    margin-top: 34px;
-    font-family: 'Cairo', sans-serif;
-    font-size: 0.75rem;
-    color: #8ba87a;
-    border-top: 1px solid #d4e0ca;
-    padding-top: 20px;
-  }
-
-  @media (max-width: 520px) {
-    .verse-item { padding: 14px 16px; }
-    .verse-num { width: 34px; height: 34px; font-size: 0.85rem; }
-    .audio-section { gap: 12px; }
-  }
+:root{--green:#276d2c;--deep:#174b26;--leaf:#5d9c43;--pale:#edf7e6;--line:#d3e5c8;--ink:#211f19}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;padding:18px 12px 36px;background:linear-gradient(145deg,#f5f8f2,#e4eedf);color:var(--ink);font-family:'Amiri',serif}
+.container{max-width:880px;margin:auto}
+.hero{position:relative;overflow:hidden;text-align:center;padding:25px 16px 22px;margin-bottom:18px;border:1px solid #c9dfbd;border-radius:34px;background:radial-gradient(ellipse at 50% 0%,#fff8d8 0,#f4f8df 43%,#b7dba0 100%);box-shadow:0 8px 24px #244b2510}
+.hero:before,.hero:after{content:"✦";position:absolute;font-size:50px;color:#fff4c1;opacity:.75;top:8px}.hero:before{left:20px}.hero:after{right:20px}
+.moon{font-size:1.2rem;color:#6c963d;letter-spacing:10px}
+h1{font-size:clamp(2.5rem,8vw,4.4rem);line-height:1.35;color:var(--deep);font-weight:700;text-shadow:0 2px #fff}
+.range{display:inline-block;margin-top:7px;padding:5px 24px;border-radius:50px;background:linear-gradient(90deg,#1e5b2a,#397e35);border:2px solid #e8c66d;color:white;font:700 1rem 'Cairo',sans-serif}
+.audio-box{display:flex;align-items:center;gap:16px;background:#ffffffeb;border:1px solid var(--line);border-radius:28px;padding:18px 20px;margin-bottom:20px;box-shadow:0 7px 22px #244b2510}
+.play-main,.play-verse{border:0;border-radius:50%;background:linear-gradient(145deg,#4b9239,#145526);color:white;display:grid;place-items:center;cursor:pointer;box-shadow:0 0 0 5px #e0eed9;flex-shrink:0}
+.play-main{width:66px;height:66px;font-size:1.7rem}
+.audio-content{flex:1;min-width:0}.audio-title{font:700 1.05rem 'Cairo',sans-serif;color:var(--deep);margin-bottom:8px}
+.audio-controls{display:flex;align-items:center;gap:10px}input[type=range]{accent-color:var(--green);min-width:0;flex:1;cursor:pointer}.time{font:600 .8rem 'Cairo',sans-serif;direction:ltr;white-space:nowrap}
+.verse-list{display:flex;flex-direction:column;gap:12px}
+.verse{display:flex;align-items:center;gap:14px;padding:16px;background:#fff;border:1px solid #e1ebda;border-radius:25px;box-shadow:0 5px 15px #254b2510;cursor:pointer;transition:background .2s,border .2s}
+.verse.active{background:#f3ffeb;border:2px solid #59a344;box-shadow:0 8px 18px #38752a18}
+.num{width:42px;height:42px;display:grid;place-items:center;border:2px solid #a9ca95;border-radius:50%;color:var(--deep);font:700 1rem 'Cairo',sans-serif;flex-shrink:0;background:#f7fbf3}
+.ayah{font-size:clamp(1.5rem,4.7vw,2.15rem);line-height:1.9;text-align:right;flex:1;overflow-wrap:anywhere}
+.play-verse{width:43px;height:43px;font-size:1rem}
+.footer{text-align:center;color:#386e2c;font:600 .82rem 'Cairo',sans-serif;background:#e1f1d6;border-radius:24px;padding:12px;margin-top:20px}
+@media(max-width:520px){body{padding:10px 9px 24px}.hero{border-radius:25px;padding:20px 10px}.audio-box{padding:14px 12px;gap:12px;border-radius:23px}.play-main{width:55px;height:55px}.verse{padding:12px 10px;gap:10px;border-radius:20px}.num{width:34px;height:34px;font-size:.85rem}.play-verse{width:36px;height:36px}.ayah{font-size:clamp(1.35rem,5vw,1.8rem)}.time{font-size:.7rem}}
 </style>
 </head>
 <body>
-<div class="container">
-  <div class="surah-header">
-    <div class="surah-title">
-      <span class="title-arabic">سُورَةُ يُوسُف</span>
-      <span class="title-secondary">(أحسن القصص)</span>
-    </div>
-    <div class="verse-range">الآيات ١٠٤ – ١١١ (ختام السورة)</div>
+<main class="container">
+<header class="hero">
+  <div class="moon">☾　✧　☽</div>
+  <h1>سُورَةُ يس</h1>
+  <div class="range">الآيات ٣٧ – ٤٨</div>
+</header>
+<section class="audio-box" aria-label="مشغل التلاوة">
+  <button class="play-main" id="mainPlay" aria-label="تشغيل أو إيقاف">▶</button>
+  <div class="audio-content">
+    <div class="audio-title">♫ استمع إلى سورة يس</div>
+    <div class="audio-controls"><input id="seek" type="range" min="0" max="100" value="0" aria-label="موضع التلاوة"><span class="time" id="clock">00:00 / 00:00</span></div>
   </div>
-
-  <div class="surah-note">
-    ﴿ لَقَدْ كَانَ فِي يُوسُفَ وَإِخْوَتِهِ آيَاتٌ لِلسَّائِلِينَ ﴾
-  </div>
-
-  <div class="audio-section">
-    <button class="play-button" id="playToggleBtn" aria-label="play/pause">▶︎</button>
-    <div class="audio-status">
-      <div class="status-text" id="audioStatusLabel">استمع إلى الآيات</div>
-      <div class="progress-bar-bg"><div class="progress-fill" id="audioProgressFill"></div></div>
-    </div>
-  </div>
-
-  <div class="verses-list" id="versesList"></div>
-  <div class="footer-note">✨ اضغط على أي آية للانتقال إليها · تلاوة واضحة للأطفال · انتقال تلقائي بين الآيات</div>
-</div>
-
-<audio id="quranAudio" preload="metadata"></audio>
-
+</section>
+<section class="verse-list" id="verses" aria-label="آيات سورة يس"></section>
+<footer class="footer">✨ تلاوة واضحة للأطفال • اضغط على أي آية للاستماع منها • انتقال تلقائي بين الآيات</footer>
+<audio id="audio" preload="metadata"></audio>
+</main>
 <script>
-  // ====================== SURAH YUSUF (12) VERSES 104 – 111 (END) ======================
-  const versesData = [
-    { num: 104, arabic: "وَمَا تَسْأَلُهُمْ عَلَيْهِ مِنْ أَجْرٍ ۚ إِنْ هُوَ إِلَّا ذِكْرٌ لِلْعَالَمِينَ" },
-    { num: 105, arabic: "وَكَأَيِّنْ مِنْ آيَةٍ فِي السَّمَاوَاتِ وَالْأَرْضِ يَمُرُّونَ عَلَيْهَا وَهُمْ عَنْهَا مُعْرِضُونَ" },
-    { num: 106, arabic: "وَمَا يُؤْمِنُ أَكْثَرُهُمْ بِاللَّهِ إِلَّا وَهُمْ مُشْرِكُونَ" },
-    { num: 107, arabic: "أَفَأَمِنُوا أَنْ تَأْتِيَهُمْ غَاشِيَةٌ مِنْ عَذَابِ اللَّهِ أَوْ تَأْتِيَهُمُ السَّاعَةُ بَغْتَةً وَهُمْ لَا يَشْعُرُونَ" },
-    { num: 108, arabic: "قُلْ هَٰذِهِ سَبِيلِي أَدْعُو إِلَى اللَّهِ ۚ عَلَىٰ بَصِيرَةٍ أَنَا وَمَنِ اتَّبَعَنِي ۖ وَسُبْحَانَ اللَّهِ وَمَا أَنَا مِنَ الْمُشْرِكِينَ" },
-    { num: 109, arabic: "وَمَا أَرْسَلْنَا مِنْ قَبْلِكَ إِلَّا رِجَالًا نُوحِي إِلَيْهِمْ مِنْ أَهْلِ الْقُرَىٰ ۗ أَفَلَمْ يَسِيرُوا فِي الْأَرْضِ فَيَنْظُرُوا كَيْفَ كَانَ عَاقِبَةُ الَّذِينَ مِنْ قَبْلِهِمْ ۗ وَلَدَارُ الْآخِرَةِ خَيْرٌ لِلَّذِينَ اتَّقَوْا ۗ أَفَلَا تَعْقِلُونَ" },
-    { num: 110, arabic: "حَتَّىٰ إِذَا اسْتَيْأَسَ الرُّسُلُ وَظَنُّوا أَنَّهُمْ قَدْ كُذِبُوا جَاءَهُمْ نَصْرُنَا فَنُجِّيَ مَنْ نَشَاءُ ۖ وَلَا يُرَدُّ بَأْسُنَا عَنِ الْقَوْمِ الْمُجْرِمِينَ" },
-    { num: 111, arabic: "لَقَدْ كَانَ فِي يُوسُفَ وَإِخْوَتِهِ آيَاتٌ لِلسَّائِلِينَ" }
-  ];
-
-  function getAyahUrl(verseNumber) {
-    const surahCode = "012";
-    const versePadded = String(verseNumber).padStart(3, '0');
-    return `https://everyayah.com/data/Alafasy_128kbps/${surahCode}${versePadded}.mp3`;
-  }
-
-  const versesContainer = document.getElementById('versesList');
-  const audioElem = document.getElementById('quranAudio');
-  const playBtn = document.getElementById('playToggleBtn');
-  const statusLabel = document.getElementById('audioStatusLabel');
-  const progressFillBar = document.getElementById('audioProgressFill');
-
-  let currentIdx = 0;
-  let isPlaying = false;
-  let autoNextTimeout = null;
-
-  function buildVerses() {
-    versesContainer.innerHTML = '';
-    versesData.forEach((verse, idx) => {
-      const card = document.createElement('div');
-      card.className = 'verse-item';
-      card.setAttribute('data-index', idx);
-      card.setAttribute('data-verse', verse.num);
-      card.innerHTML = `
-        <div class="verse-header">
-          <span class="verse-num">${verse.num}</span>
-          <div class="arabic-text">${verse.arabic}</div>
-        </div>
-      `;
-      card.addEventListener('click', (e) => {
-        e.stopPropagation();
-        jumpToVerse(idx);
-      });
-      versesContainer.appendChild(card);
-    });
-  }
-
-  function setActiveVerse(index, smoothScroll = true) {
-    const cards = document.querySelectorAll('.verse-item');
-    cards.forEach((card, i) => {
-      if (i === index) card.classList.add('active');
-      else card.classList.remove('active');
-    });
-    const progressPercent = ((index + 1) / versesData.length) * 100;
-    progressFillBar.style.width = `${progressPercent}%`;
-    
-    if (smoothScroll) {
-      const activeCard = document.querySelector(`.verse-item[data-index='${index}']`);
-      if (activeCard) {
-        activeCard.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
-      }
-    }
-  }
-
-  function clearNextTimeout() {
-    if (autoNextTimeout) { clearTimeout(autoNextTimeout); autoNextTimeout = null; }
-  }
-
-  function updateUIStatus(verseIdx, playing) {
-    const verseNum = versesData[verseIdx].num;
-    if (playing) {
-      statusLabel.innerHTML = `🔊 تلاوة الآية ${verseNum}`;
-    } else {
-      if (audioElem.paused && audioElem.currentTime === 0) {
-        statusLabel.innerHTML = `🎧 اضغط للاستماع — الآية ${verseNum}`;
-      } else if (audioElem.paused && audioElem.currentTime > 0) {
-        statusLabel.innerHTML = `⏸ متوقف عند الآية ${verseNum}`;
-      } else {
-        statusLabel.innerHTML = `📖 يستمع إلى الآية ${verseNum}`;
-      }
-    }
-  }
-
-  function playVerse(index, autoContinue = true) {
-    if (index < 0 || index >= versesData.length) return;
-    clearNextTimeout();
-    audioElem.pause();
-    isPlaying = false;
-    currentIdx = index;
-    const verse = versesData[currentIdx];
-    audioElem.src = getAyahUrl(verse.num);
-    audioElem.load();
-    setActiveVerse(currentIdx, true);
-    updateUIStatus(currentIdx, true);
-    
-    const playPromise = audioElem.play();
-    if (playPromise !== undefined) {
-      playPromise.then(() => {
-        isPlaying = true;
-        playBtn.innerHTML = '⏸︎';
-        updateUIStatus(currentIdx, true);
-        if (autoContinue) {
-          audioElem.onended = () => {
-            if (currentIdx + 1 < versesData.length) {
-              autoNextTimeout = setTimeout(() => playVerse(currentIdx + 1, true), 620);
-            } else {
-              isPlaying = false;
-              playBtn.innerHTML = '▶︎';
-              statusLabel.innerHTML = '✅ تمت تلاوة خاتمة سورة يوسف (١٠٤–١١١) 🌟';
-              progressFillBar.style.width = '100%';
-              audioElem.onended = null;
-              clearNextTimeout();
-            }
-          };
-        }
-      }).catch(err => {
-        isPlaying = false;
-        playBtn.innerHTML = '▶︎';
-        statusLabel.innerHTML = '⚠️ يرجى التفاعل المباشر';
-        clearNextTimeout();
-      });
-    }
-    audioElem.onpause = () => {
-      if (isPlaying) { isPlaying = false; playBtn.innerHTML = '▶︎'; updateUIStatus(currentIdx, false); clearNextTimeout(); }
-    };
-    audioElem.onplay = () => {
-      if (!isPlaying) { isPlaying = true; playBtn.innerHTML = '⏸︎'; updateUIStatus(currentIdx, true); }
-    };
-    audioElem.onerror = () => {
-      isPlaying = false; playBtn.innerHTML = '▶︎'; statusLabel.innerHTML = '⚠️ خطأ في التحميل';
-      clearNextTimeout();
-    };
-  }
-
-  function jumpToVerse(index) {
-    clearNextTimeout();
-    if (index === currentIdx && isPlaying) {
-      audioElem.pause();
-      playVerse(index, true);
-    } else {
-      playVerse(index, true);
-    }
-  }
-
-  function togglePlayback() {
-    if (!audioElem.src || audioElem.ended) {
-      if (audioElem.ended) currentIdx = 0;
-      clearNextTimeout();
-      playVerse(currentIdx, true);
-      return;
-    }
-    if (isPlaying) {
-      audioElem.pause();
-      isPlaying = false;
-      playBtn.innerHTML = '▶︎';
-      statusLabel.innerHTML = `⏸ توقف عند الآية ${versesData[currentIdx].num}`;
-      clearNextTimeout();
-      audioElem.onended = null;
-    } else {
-      audioElem.play().then(() => {
-        isPlaying = true;
-        playBtn.innerHTML = '⏸︎';
-        updateUIStatus(currentIdx, true);
-        audioElem.onended = () => {
-          if (currentIdx + 1 < versesData.length) {
-            autoNextTimeout = setTimeout(() => playVerse(currentIdx + 1, true), 620);
-          } else {
-            isPlaying = false; playBtn.innerHTML = '▶︎';
-            statusLabel.innerHTML = '✨ أتممت خاتمة سورة يوسف (١٠٤–١١١) ✨';
-            progressFillBar.style.width = '100%';
-          }
-        };
-      }).catch(() => { statusLabel.innerHTML = '⚠️ يلزم تفاعل'; });
-    }
-  }
-
-  function init() {
-    buildVerses();
-    setActiveVerse(0, false);
-    playBtn.innerHTML = '▶︎';
-    statusLabel.innerHTML = '🎙️ استمع لخاتمة يوسف ١٠٤–١١١';
-    progressFillBar.style.width = '0%';
-    currentIdx = 0;
-    playBtn.addEventListener('click', (e) => { e.preventDefault(); togglePlayback(); });
-  }
-  init();
+const verses=[
+{n:37,t:"وَآيَةٌ لَهُمُ اللَّيْلُ نَسْلَخُ مِنْهُ النَّهَارَ فَإِذَا هُمْ مُظْلِمُونَ"},
+{n:38,t:"وَالشَّمْسُ تَجْرِي لِمُسْتَقَرٍّ لَهَا ۚ ذَٰلِكَ تَقْدِيرُ الْعَزِيزِ الْعَلِيمِ"},
+{n:39,t:"وَالْقَمَرَ قَدَّرْنَاهُ مَنَازِلَ حَتَّىٰ عَادَ كَالْعُرْجُونِ الْقَدِيمِ"},
+{n:40,t:"لَا الشَّمْسُ يَنْبَغِي لَهَا أَنْ تُدْرِكَ الْقَمَرَ وَلَا اللَّيْلُ سَابِقُ النَّهَارِ ۚ وَكُلٌّ فِي فَلَكٍ يَسْبَحُونَ"},
+{n:41,t:"وَآيَةٌ لَهُمْ أَنَّا حَمَلْنَا ذُرِّيَّتَهُمْ فِي الْفُلْكِ الْمَشْحُونِ"},
+{n:42,t:"وَخَلَقْنَا لَهُمْ مِنْ مِثْلِهِ مَا يَرْكَبُونَ"},
+{n:43,t:"وَإِنْ نَشَأْ نُغْرِقْهُمْ فَلَا صَرِيخَ لَهُمْ وَلَا هُمْ يُنْقَذُونَ"},
+{n:44,t:"إِلَّا رَحْمَةً مِنَّا وَمَتَاعًا إِلَىٰ حِينٍ"},
+{n:45,t:"وَإِذَا قِيلَ لَهُمُ اتَّقُوا مَا بَيْنَ أَيْدِيكُمْ وَمَا خَلْفَكُمْ لَعَلَّكُمْ تُرْحَمُونَ"},
+{n:46,t:"وَمَا تَأْتِيهِمْ مِنْ آيَةٍ مِنْ آيَاتِ رَبِّهِمْ إِلَّا كَانُوا عَنْهَا مُعْرِضِينَ"},
+{n:47,t:"وَإِذَا قِيلَ لَهُمْ أَنْفِقُوا مِمَّا رَزَقَكُمُ اللَّهُ قَالَ الَّذِينَ كَفَرُوا لِلَّذِينَ آمَنُوا أَنُطْعِمُ مَنْ لَوْ يَشَاءُ اللَّهُ أَطْعَمَهُ إِنْ أَنْتُمْ إِلَّا فِي ضَلَالٍ مُبِينٍ"},
+{n:48,t:"وَيَقُولُونَ مَتَىٰ هَٰذَا الْوَعْدُ إِنْ كُنْتُمْ صَادِقِينَ"}
+];
+const audio=new Audio();audio.preload='metadata';
+const list=document.getElementById('verses'),mainPlay=document.getElementById('mainPlay'),seek=document.getElementById('seek'),clock=document.getElementById('clock');
+let current=0,playing=false,seeking=false;
+function url(n){return "https://everyayah.com/data/Alafasy_128kbps/036"+String(n).padStart(3,'0')+".mp3"}
+function fmt(s){if(!Number.isFinite(s))return"00:00";return String(Math.floor(s/60)).padStart(2,'0')+":"+String(Math.floor(s%60)).padStart(2,'0')}
+function render(){list.innerHTML='';verses.forEach((v,i)=>{const card=document.createElement('article');card.className='verse';card.dataset.index=i;card.innerHTML=`<span class="num">${v.n}</span><div class="ayah" lang="ar">${v.t}</div><button class="play-verse" aria-label="استمع إلى الآية ${v.n}">▶</button>`;card.addEventListener('click',()=>playVerse(i));list.appendChild(card)})}
+function highlight(){[...list.children].forEach((el,i)=>{el.classList.toggle('active',i===current);el.querySelector('.play-verse').textContent=(i===current&&playing)?'Ⅱ':'▶'})}
+function updateClock(){clock.textContent=fmt(audio.currentTime)+" / "+fmt(audio.duration);if(!seeking&&Number.isFinite(audio.duration)&&audio.duration>0)seek.value=audio.currentTime/audio.duration*100}
+async function playVerse(i){if(i<0||i>=verses.length)return;current=i;playing=false;audio.pause();audio.src=url(verses[i].n);audio.load();highlight();try{await audio.play();playing=true;mainPlay.textContent='Ⅱ';highlight()}catch(e){mainPlay.textContent='▶';clock.textContent='اضغط مجددًا لتشغيل التلاوة'}}
+mainPlay.addEventListener('click',async()=>{if(playing){audio.pause();playing=false;mainPlay.textContent='▶';highlight();return}if(!audio.src){await playVerse(current);return}try{await audio.play();playing=true;mainPlay.textContent='Ⅱ';highlight()}catch(e){await playVerse(current)}});
+audio.addEventListener('ended',()=>{if(current<verses.length-1)playVerse(current+1);else{playing=false;mainPlay.textContent='▶';highlight()}});
+audio.addEventListener('play',()=>{playing=true;mainPlay.textContent='Ⅱ';highlight()});
+audio.addEventListener('pause',()=>{playing=false;mainPlay.textContent='▶';highlight()});
+audio.addEventListener('timeupdate',updateClock);audio.addEventListener('loadedmetadata',updateClock);
+seek.addEventListener('input',()=>{seeking=true;if(Number.isFinite(audio.duration))clock.textContent=fmt(seek.value/100*audio.duration)+" / "+fmt(audio.duration)});
+seek.addEventListener('change',()=>{if(Number.isFinite(audio.duration))audio.currentTime=seek.value/100*audio.duration;seeking=false;updateClock()});
+render();highlight();audio.src=url(37);audio.load();
 </script>
 </body>
 </html>
